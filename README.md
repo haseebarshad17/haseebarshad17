@@ -10,14 +10,16 @@ I love working with modern JavaScript frameworks and writing clean, scalable cod
 - 🌱 Currently deepening my skills in **Next.js**, **TypeScript**, and **Tailwind CSS**
 - 💬 I enjoy discussing **frontend architecture**, **performance optimization**, and **clean code practices**
 - 🤝 Open to collaborating on **frontend-heavy projects** and **modern web apps**
-- 📫 Reach me at: [haseebarshad17@gmail.com](mailto:haseebarshad17@gmail.com)
+- 📫 Reach me at:
+  - [haseebarshad17@gmail.com](mailto:haseebarshad17@gmail.com)
+  - +923295339588
 
 ---
 
 ### 🛠️ Tech Stack
 - **Languages:** HTML5, CSS3, JavaScript (ES6+), TypeScript (learning)
-- **Frameworks/Libraries:** React.js, Next.js, Tailwind CSS
-- **Tools:** Git, GitHub, VS Code
+- **Frameworks/Libraries:** React.js, Next.js, Tailwind CSS, SCSS/SASS, Gulp Js, JQuery, 
+- **Tools:** Git, GitHub, NPM - Node, VS Code / Cursor ai
 - **Other:** Responsive Web Design, API Integration, Code Optimization
 
 ---
