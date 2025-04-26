@@ -31,6 +31,7 @@ I can spend hours debugging a single bug — because solving it feels like winni
 
 ### 🔗 Connect with me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&style=for-the-badge)](https://linkedin.com/in/haseebarshad17)  
-[![Portfolio Website](https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge)](https://haseebarshad17.vercel.app)
+[![portfolio](https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge)](https://github.com/haseebarshad17?tab=repositories)
+[![Website](https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge)](https://haseebarshad17.vercel.app)
 
 ---
