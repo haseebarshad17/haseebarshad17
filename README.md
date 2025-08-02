@@ -11,7 +11,7 @@ I love working with modern JavaScript frameworks and writing clean, scalable cod
 - 💬 I enjoy discussing **frontend architecture**, **performance optimization**, and **clean code practices**
 - 🤝 Open to collaborating on **frontend-heavy projects** and **modern web apps**
 - 📫 Reach me at:
-  - [haseebarshad17@gmail.com](mailto:haseebarshad17@gmail.com)
+  - [haseebarshad1712@gmail.com](mailto:haseebarshad1712@gmail.com)
   - +923295339588
 
 ---
