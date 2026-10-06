@@ -28,7 +28,6 @@ def main():
     alpha = rgba[:, :, 3]
     rgb = rgba[:, :, :3]
 
-    # White background
     white = np.full_like(rgb, 255)
     alpha_f = alpha[:, :, None] / 255.0
 
@@ -37,10 +36,8 @@ def main():
         white * (1 - alpha_f)
     ).astype(np.uint8)
 
-    # Grayscale
     gray = cv2.cvtColor(composited, cv2.COLOR_RGB2GRAY)
 
-    # Improve local contrast
     clahe = cv2.createCLAHE(
         clipLimit=2.0,
         tileGridSize=(8, 8),
@@ -48,7 +45,6 @@ def main():
 
     enhanced = clahe.apply(gray)
 
-    # Slightly increase contrast
     enhanced = cv2.normalize(
         enhanced,
         None,

@@ -6,7 +6,7 @@
 
 <img
   src="./contrib-heatmap.svg"
-  width="760"
+  width="860"
   alt="GitHub contribution heatmap"
 />
 
@@ -22,7 +22,7 @@
 <td valign="top">
 <img
   src="./avi-ascii.svg"
-  width="350"
+  width="370"
   alt="ASCII portrait"
 />
 </td>
@@ -30,7 +30,7 @@
 <td valign="top">
 <img
   src="./info-card.svg"
-  width="390"
+  width="490"
   alt="Developer information"
 />
 </td>

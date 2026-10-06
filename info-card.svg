@@ -6,10 +6,25 @@
 <circle cx="56" cy="20" r="5" fill="#27c93f"/>
 <text x="78" y="25" font-family="monospace" font-size="13" fill="#8b949e">haseebarshad17@github</text>
 <line x1="20" y1="45" x2="470" y2="45" stroke="#30363d"/>
-<g opacity="0"><text x="25" y="80" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Role      </text><text x="125" y="80" font-family="monospace" font-size="13" fill="#c9d1d9">Software Engineer</text><animate attributeName="opacity" values="0;1" keyTimes="0;1" begin="0.2s" dur="0.35s" fill="freeze"/></g>
-<g opacity="0"><text x="25" y="112" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Stack     </text><text x="125" y="112" font-family="monospace" font-size="13" fill="#c9d1d9">React / Next.js / React Native</text><animate attributeName="opacity" values="0;1" keyTimes="0;1" begin="0.38s" dur="0.35s" fill="freeze"/></g>
-<g opacity="0"><text x="25" y="144" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Backend   </text><text x="125" y="144" font-family="monospace" font-size="13" fill="#c9d1d9">Node.js / Supabase</text><animate attributeName="opacity" values="0;1" keyTimes="0;1" begin="0.56s" dur="0.35s" fill="freeze"/></g>
-<g opacity="0"><text x="25" y="176" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Focus     </text><text x="125" y="176" font-family="monospace" font-size="13" fill="#c9d1d9">Full Stack Development</text><animate attributeName="opacity" values="0;1" keyTimes="0;1" begin="0.74s" dur="0.35s" fill="freeze"/></g>
-<g opacity="0"><text x="25" y="208" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Building  </text><text x="125" y="208" font-family="monospace" font-size="13" fill="#c9d1d9">eDaara / Deenify / Servita / Mountspeak</text><animate attributeName="opacity" values="0;1" keyTimes="0;1" begin="0.9199999999999999s" dur="0.35s" fill="freeze"/></g>
+<g opacity="1">
+<text x="25" y="85" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Now</text>
+<text x="125" y="85" font-family="monospace" font-size="13" fill="#c9d1d9">Associate Software Engineer</text>
+
+</g>
+<g opacity="1">
+<text x="25" y="121" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Prev</text>
+<text x="125" y="121" font-family="monospace" font-size="13" fill="#c9d1d9">Full Stack Engineer</text>
+
+</g>
+<g opacity="1">
+<text x="25" y="157" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Stack</text>
+<text x="125" y="157" font-family="monospace" font-size="13" fill="#c9d1d9">React / Next.js / React Native</text>
+
+</g>
+<g opacity="1">
+<text x="25" y="193" font-family="monospace" font-size="13" font-weight="bold" fill="#39d353">Highlights</text>
+<text x="125" y="193" font-family="monospace" font-size="13" fill="#c9d1d9">Supabase / Node.js / TypeScript</text>
+
+</g>
 <text x="25" y="240" font-family="monospace" font-size="13" fill="#39d353">$ whoami_</text>
 </svg>
