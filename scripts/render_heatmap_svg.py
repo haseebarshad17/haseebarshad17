@@ -1,15 +1,9 @@
 from pathlib import Path
 import json
-from datetime import datetime
 
 
-INPUT = Path(
-    "data/contributions.json"
-)
-
-OUTPUT = Path(
-    "contrib-heatmap.svg"
-)
+INPUT = Path("data/contributions.json")
+OUTPUT = Path("contrib-heatmap.svg")
 
 
 PALETTE = [
@@ -27,14 +21,14 @@ TEXT = "#c9d1d9"
 MUTED = "#8b949e"
 
 
-CELL = 11
+WIDTH = 860
+HEIGHT = 125
+
+CELL = 10
 GAP = 3
 
-LEFT = 35
-TOP = 35
-
-WIDTH = 860
-HEIGHT = 150
+LEFT = 20
+TOP = 28
 
 
 def escape(value):
@@ -50,8 +44,7 @@ def main():
 
     if not INPUT.exists():
         raise FileNotFoundError(
-            "data/contributions.json "
-            "not found."
+            "data/contributions.json not found."
         )
 
     data = json.loads(
@@ -65,8 +58,16 @@ def main():
         key=lambda item: item["date"],
     )
 
-    total = data["total"]
-    username = data["username"]
+    if not days:
+        raise ValueError(
+            "No contribution data found."
+        )
+
+    total = data.get("total", 0)
+    username = data.get(
+        "username",
+        "github",
+    )
 
     current_streak = data.get(
         "current_streak",
@@ -78,29 +79,27 @@ def main():
         0,
     )
 
-    first_date = datetime.strptime(
-        days[0]["date"],
-        "%Y-%m-%d",
-    )
-
-    start_offset = (
-        first_date.weekday() + 1
-    ) % 7
+    # Keep exactly the last 365 days.
+    days = days[-365:]
 
     padded = (
-        [None] * start_offset
+        [None]
+        * (
+            (
+                len(days)
+                + 6
+            )
+            % 7
+        )
         + days
     )
-
-    columns = (
-        len(padded) + 6
-    ) // 7
 
     svg = [
         '<?xml version="1.0" encoding="UTF-8"?>',
 
         (
-            f'<svg xmlns="http://www.w3.org/2000/svg" '
+            f'<svg '
+            f'xmlns="http://www.w3.org/2000/svg" '
             f'width="{WIDTH}" '
             f'height="{HEIGHT}" '
             f'viewBox="0 0 {WIDTH} {HEIGHT}">'
@@ -114,45 +113,14 @@ def main():
             f'fill="{BG}"/>'
         ),
 
-        "<defs>",
-
-        """
-        <style>
-            .contribution {
-                transform-box: fill-box;
-                transform-origin: center;
-                animation-name: reveal;
-                animation-duration: 0.45s;
-                animation-timing-function: ease-out;
-                animation-fill-mode: forwards;
-                opacity: 0;
-            }
-
-            @keyframes reveal {
-                from {
-                    opacity: 0;
-                    transform: translateY(-12px) scale(0.8);
-                }
-
-                to {
-                    opacity: 1;
-                    transform: translateY(0) scale(1);
-                }
-            }
-        </style>
-        """,
-
-        "</defs>",
-
         (
             f'<text '
             f'x="20" '
-            f'y="22" '
+            f'y="17" '
             f'font-family="monospace" '
-            f'font-size="11" '
+            f'font-size="9" '
             f'fill="{MUTED}">'
-            f'{escape(username)}@github '
-            f'~ contributions'
+            f'{escape(username)}@github ~ contributions'
             f'</text>'
         ),
     ]
@@ -179,54 +147,88 @@ def main():
             0,
             min(
                 5,
-                int(day["level"]),
+                int(day.get("level", 0)),
             ),
         )
 
         fill = PALETTE[level]
 
         delay = (
-            0.015
-            + (column + row) * 0.018
+            0.01
+            + (column + row)
+            * 0.015
         )
 
         svg.append(
             (
                 f'<rect '
-                f'class="contribution" '
                 f'x="{x}" '
                 f'y="{y}" '
                 f'width="{CELL}" '
                 f'height="{CELL}" '
                 f'rx="2" '
                 f'fill="{fill}" '
-                f'style="animation-delay:{delay:.3f}s"/>'
+                f'opacity="0">'
+                f'<animate '
+                f'attributeName="opacity" '
+                f'values="0;1" '
+                f'begin="{delay:.3f}s" '
+                f'dur="0.25s" '
+                f'fill="freeze"/>'
+                f'</rect>'
             )
         )
 
-    legend_x = 665
-    legend_y = 125
+    # Footer stats.
+    svg.append(
+        (
+            f'<text '
+            f'x="20" '
+            f'y="116" '
+            f'font-family="monospace" '
+            f'font-size="9" '
+            f'fill="{TEXT}">'
+            f'{total:,} contributions in the last year'
+            f'</text>'
+        )
+    )
 
     svg.append(
         (
             f'<text '
-            f'x="{legend_x - 42}" '
-            f'y="{legend_y + 10}" '
+            f'x="450" '
+            f'y="116" '
             f'font-family="monospace" '
-            f'font-size="10" '
+            f'font-size="8" '
+            f'fill="{MUTED}">'
+            f'streak {current_streak} · '
+            f'longest {longest_streak}'
+            f'</text>'
+        )
+    )
+
+    # Compact legend.
+    legend_x = 690
+    legend_y = 109
+
+    svg.append(
+        (
+            f'<text '
+            f'x="{legend_x - 28}" '
+            f'y="{legend_y + 7}" '
+            f'font-family="monospace" '
+            f'font-size="7" '
             f'fill="{MUTED}">'
             f'Less'
             f'</text>'
         )
     )
 
-    for index, color in enumerate(
-        PALETTE
-    ):
+    for index, color in enumerate(PALETTE):
 
         x = (
             legend_x
-            + index * 16
+            + index * 13
         )
 
         svg.append(
@@ -234,8 +236,8 @@ def main():
                 f'<rect '
                 f'x="{x}" '
                 f'y="{legend_y}" '
-                f'width="11" '
-                f'height="11" '
+                f'width="9" '
+                f'height="9" '
                 f'rx="2" '
                 f'fill="{color}"/>'
             )
@@ -244,40 +246,12 @@ def main():
     svg.append(
         (
             f'<text '
-            f'x="{legend_x + 101}" '
-            f'y="{legend_y + 10}" '
+            f'x="{legend_x + 82}" '
+            f'y="{legend_y + 7}" '
             f'font-family="monospace" '
-            f'font-size="10" '
+            f'font-size="7" '
             f'fill="{MUTED}">'
             f'More'
-            f'</text>'
-        )
-    )
-
-    svg.append(
-        (
-            f'<text '
-            f'x="20" '
-            f'y="125" '
-            f'font-family="monospace" '
-            f'font-size="11" '
-            f'fill="{TEXT}">'
-            f'{total:,} contributions '
-            f'in the last year'
-            f'</text>'
-        )
-    )
-
-    svg.append(
-        (
-            f'<text '
-            f'x="20" '
-            f'y="140" '
-            f'font-family="monospace" '
-            f'font-size="9" '
-            f'fill="{MUTED}">'
-            f'streak: {current_streak} '
-            f'· longest: {longest_streak}'
             f'</text>'
         )
     )

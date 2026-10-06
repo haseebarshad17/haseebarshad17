@@ -31,7 +31,7 @@
 <img
   src="./info-card.svg"
   width="490"
-  alt="Developer information"
+  alt="GitHub analytics"
 />
 </td>
 
