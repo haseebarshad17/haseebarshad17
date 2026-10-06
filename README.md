@@ -15,6 +15,9 @@
 <!-- <h3>
 <code>haseebarshad17@github ~ $ whoami</code>
 </h3> -->
+<h3>
+<code>Senior Software Engineer ~ 4+ years</code>
+</h3>
 
 <table>
 <tr>
