@@ -6,38 +6,41 @@
 <circle cx="56" cy="20" r="5" fill="#27c93f"/>
 <text x="78" y="25" font-family="monospace" font-size="12" fill="#8b949e">haseebarshad17@github</text>
 <line x1="20" y1="42" x2="470" y2="42" stroke="#30363d"/>
-<text x="22" y="70" font-family="monospace" font-size="10" letter-spacing="1.5" fill="#39d353">GITHUB ANALYTICS</text>
-<text x="22" y="98" font-family="monospace" font-size="30" font-weight="bold" fill="#c9d1d9">3,332</text>
-<text x="112" y="98" font-family="monospace" font-size="10" fill="#8b949e">total contributions</text>
-<g opacity="1"><rect x="22" y="112" width="214" height="52" rx="7" fill="#161b22" stroke="#30363d"/><text x="34" y="127" font-family="monospace" font-size="7" letter-spacing="1" fill="#39d353">CURRENT STREAK</text><text x="34" y="148" font-family="monospace" font-size="18" font-weight="bold" fill="#c9d1d9">2</text><text x="107" y="146" font-family="monospace" font-size="7" fill="#8b949e">consecutive days</text></g>
-<g opacity="1"><rect x="254" y="112" width="214" height="52" rx="7" fill="#161b22" stroke="#30363d"/><text x="266" y="127" font-family="monospace" font-size="7" letter-spacing="1" fill="#39d353">LONGEST STREAK</text><text x="266" y="148" font-family="monospace" font-size="18" font-weight="bold" fill="#c9d1d9">38</text><text x="339" y="146" font-family="monospace" font-size="7" fill="#8b949e">best run</text></g>
-<g opacity="1"><rect x="22" y="172" width="214" height="52" rx="7" fill="#161b22" stroke="#30363d"/><text x="34" y="187" font-family="monospace" font-size="7" letter-spacing="1" fill="#39d353">ACTIVE DAYS</text><text x="34" y="208" font-family="monospace" font-size="18" font-weight="bold" fill="#c9d1d9">280</text><text x="107" y="206" font-family="monospace" font-size="7" fill="#8b949e">days with activity</text></g>
-<g opacity="1"><rect x="254" y="172" width="214" height="52" rx="7" fill="#161b22" stroke="#30363d"/><text x="266" y="187" font-family="monospace" font-size="7" letter-spacing="1" fill="#39d353">BEST DAY</text><text x="266" y="208" font-family="monospace" font-size="18" font-weight="bold" fill="#c9d1d9">64</text><text x="339" y="206" font-family="monospace" font-size="7" fill="#8b949e">contributions</text></g>
-<g opacity="1"><rect x="22" y="232" width="214" height="52" rx="7" fill="#161b22" stroke="#30363d"/><text x="34" y="247" font-family="monospace" font-size="7" letter-spacing="1" fill="#39d353">ACTIVE MONTHS</text><text x="34" y="268" font-family="monospace" font-size="18" font-weight="bold" fill="#c9d1d9">12</text><text x="107" y="266" font-family="monospace" font-size="7" fill="#8b949e">of last 12</text></g>
-<g opacity="1"><rect x="254" y="232" width="214" height="52" rx="7" fill="#161b22" stroke="#30363d"/><text x="266" y="247" font-family="monospace" font-size="7" letter-spacing="1" fill="#39d353">YEAR TOTAL</text><text x="266" y="268" font-family="monospace" font-size="18" font-weight="bold" fill="#c9d1d9">3,332</text><text x="339" y="266" font-family="monospace" font-size="7" fill="#8b949e">last 12 months</text></g>
-<text x="22" y="294" font-family="monospace" font-size="8" letter-spacing="1.2" fill="#39d353">CONTRIBUTION ACTIVITY</text>
-<rect x="22.00" y="334.01" width="32.17" height="12.99" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="38.08" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">11</text>
-<rect x="59.17" y="302.00" width="32.17" height="45.00" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="75.25" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">12</text>
-<rect x="96.33" y="307.30" width="32.17" height="39.70" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="112.42" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">01</text>
-<rect x="133.50" y="335.28" width="32.17" height="11.72" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="149.58" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">02</text>
-<rect x="170.67" y="338.49" width="32.17" height="8.51" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="186.75" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">03</text>
-<rect x="207.83" y="338.27" width="32.17" height="8.73" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="223.92" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">04</text>
-<rect x="245.00" y="333.12" width="32.17" height="13.88" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="261.08" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">05</text>
-<rect x="282.17" y="309.46" width="32.17" height="37.54" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="298.25" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">06</text>
-<rect x="319.33" y="325.28" width="32.17" height="21.72" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="335.42" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">07</text>
-<rect x="356.50" y="320.06" width="32.17" height="26.94" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="372.58" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">08</text>
-<rect x="393.67" y="332.97" width="32.17" height="14.03" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="409.75" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">09</text>
-<rect x="430.83" y="345.96" width="32.17" height="1.04" rx="2" fill="#39d353" opacity="1"></rect>
-<text x="446.92" y="359" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">10</text>
+<text x="22" y="64" font-family="monospace" font-size="8" letter-spacing="1.6" fill="#39d353">SENIOR SOFTWARE ENGINEER</text>
+<text x="22" y="83" font-family="monospace" font-size="10" fill="#c9d1d9">Building scalable web &amp; mobile systems</text>
+<g opacity="1"><rect x="22" y="94" width="214" height="47" rx="7" fill="#161b22" stroke="#30363d"/><text x="34" y="107" font-family="monospace" font-size="6.5" letter-spacing="1" fill="#39d353">ROLE</text><text x="34" y="125" font-family="monospace" font-size="14" font-weight="bold" fill="#c9d1d9">Senior Developer</text><text x="34" y="136" font-family="monospace" font-size="6.5" fill="#8b949e">software engineering</text></g>
+<g opacity="1"><rect x="254" y="94" width="214" height="47" rx="7" fill="#161b22" stroke="#30363d"/><text x="266" y="107" font-family="monospace" font-size="6.5" letter-spacing="1" fill="#39d353">COMPANY</text><text x="266" y="125" font-family="monospace" font-size="14" font-weight="bold" fill="#c9d1d9">Spadatsoft</text><text x="266" y="136" font-family="monospace" font-size="6.5" fill="#8b949e">professional role</text></g>
+<g opacity="1"><rect x="22" y="147" width="214" height="47" rx="7" fill="#161b22" stroke="#30363d"/><text x="34" y="160" font-family="monospace" font-size="6.5" letter-spacing="1" fill="#39d353">PRIMARY</text><text x="34" y="178" font-family="monospace" font-size="14" font-weight="bold" fill="#c9d1d9">TypeScript</text><text x="34" y="189" font-family="monospace" font-size="6.5" fill="#8b949e">JavaScript / ES6</text></g>
+<g opacity="1"><rect x="254" y="147" width="214" height="47" rx="7" fill="#161b22" stroke="#30363d"/><text x="266" y="160" font-family="monospace" font-size="6.5" letter-spacing="1" fill="#39d353">FRONTEND</text><text x="266" y="178" font-family="monospace" font-size="14" font-weight="bold" fill="#c9d1d9">Next.js</text><text x="266" y="189" font-family="monospace" font-size="6.5" fill="#8b949e">React / React Native</text></g>
+<g opacity="1"><rect x="22" y="200" width="214" height="47" rx="7" fill="#161b22" stroke="#30363d"/><text x="34" y="213" font-family="monospace" font-size="6.5" letter-spacing="1" fill="#39d353">BACKEND</text><text x="34" y="231" font-family="monospace" font-size="14" font-weight="bold" fill="#c9d1d9">NestJS</text><text x="34" y="242" font-family="monospace" font-size="6.5" fill="#8b949e">Node.js / Express</text></g>
+<g opacity="1"><rect x="254" y="200" width="214" height="47" rx="7" fill="#161b22" stroke="#30363d"/><text x="266" y="213" font-family="monospace" font-size="6.5" letter-spacing="1" fill="#39d353">DATA / CLOUD</text><text x="266" y="231" font-family="monospace" font-size="14" font-weight="bold" fill="#c9d1d9">Supabase</text><text x="266" y="242" font-family="monospace" font-size="6.5" fill="#8b949e">Firebase / MongoDB</text></g>
+<text x="22" y="257" font-family="monospace" font-size="7.5" letter-spacing="1.3" fill="#39d353">CONTRIBUTION ACTIVITY</text>
+<rect x="22.00" y="293.88" width="32.17" height="12.12" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="38.08" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">11</text>
+<rect x="59.17" y="264.00" width="32.17" height="42.00" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="75.25" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">12</text>
+<rect x="96.33" y="268.95" width="32.17" height="37.05" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="112.42" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">01</text>
+<rect x="133.50" y="295.06" width="32.17" height="10.94" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="149.58" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">02</text>
+<rect x="170.67" y="298.06" width="32.17" height="7.94" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="186.75" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">03</text>
+<rect x="207.83" y="297.85" width="32.17" height="8.15" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="223.92" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">04</text>
+<rect x="245.00" y="293.04" width="32.17" height="12.96" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="261.08" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">05</text>
+<rect x="282.17" y="270.97" width="32.17" height="35.03" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="298.25" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">06</text>
+<rect x="319.33" y="285.73" width="32.17" height="20.27" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="335.42" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">07</text>
+<rect x="356.50" y="280.86" width="32.17" height="25.14" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="372.58" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">08</text>
+<rect x="393.67" y="292.91" width="32.17" height="13.09" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="409.75" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">09</text>
+<rect x="430.83" y="305.02" width="32.17" height="0.98" rx="2" fill="#39d353" opacity="1"></rect>
+<text x="446.92" y="318" text-anchor="middle" font-family="monospace" font-size="6" fill="#8b949e">10</text>
+<text x="22" y="337" font-family="monospace" font-size="7" fill="#8b949e">3,332 contributions · 280 active days · streak 2</text>
+<line x1="22" y1="345" x2="468" y2="345" stroke="#30363d"/>
+<text x="22" y="360" font-family="monospace" font-size="6.5" fill="#c9d1d9">✉ haseebarshad1712@gmail.com</text>
+<text x="330" y="360" font-family="monospace" font-size="6.5" fill="#c9d1d9">☎ 3295339588</text>
 </svg>

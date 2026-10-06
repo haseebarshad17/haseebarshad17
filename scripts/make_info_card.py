@@ -7,10 +7,24 @@ from collections import defaultdict
 INPUT = Path("data/contributions.json")
 OUTPUT = Path("info-card.svg")
 
+
 USERNAME = "haseebarshad17"
+
+EMAIL = "haseebarshad1712@gmail.com"
+PHONE = "3295339588"
+
+ROLE = "Senior Software Engineer"
+COMPANY = "Spadatsoft"
+
+PRIMARY = "TypeScript / JavaScript"
+FRONTEND = "Next.js / React / React Native"
+BACKEND = "NestJS / Node.js / Express"
+DATA_CLOUD = "Supabase / Firebase / MongoDB"
+
 
 WIDTH = 490
 HEIGHT = 370
+
 
 BG = "#0d1117"
 BORDER = "#30363d"
@@ -18,15 +32,6 @@ CARD = "#161b22"
 GREEN = "#39d353"
 TEXT = "#c9d1d9"
 MUTED = "#8b949e"
-
-PALETTE = [
-    "#161b22",
-    "#0e4429",
-    "#006d32",
-    "#26a641",
-    "#39d353",
-    "#69f0a0",
-]
 
 
 def escape(value):
@@ -39,6 +44,7 @@ def escape(value):
 
 
 def load_data():
+
     if not INPUT.exists():
         raise FileNotFoundError(
             "data/contributions.json not found. "
@@ -46,87 +52,79 @@ def load_data():
         )
 
     return json.loads(
-        INPUT.read_text(encoding="utf-8")
+        INPUT.read_text(
+            encoding="utf-8"
+        )
     )
 
 
 def get_monthly_data(days):
+
     monthly = defaultdict(int)
 
     for day in days:
-        month = day["date"][:7]
-        monthly[month] += day.get("count", 0)
 
-    months = sorted(monthly.keys())[-12:]
+        month = day["date"][:7]
+
+        monthly[month] += (
+            day.get("count", 0)
+        )
+
+    months = sorted(
+        monthly.keys()
+    )[-12:]
 
     return [
         (
             month,
-            monthly.get(month, 0),
+            monthly.get(month, 0)
         )
         for month in months
     ]
 
 
-def get_active_days(days):
-    return sum(
+def main():
+
+    data = load_data()
+
+    static = (
+        os.getenv("STATIC") == "1"
+    )
+
+    days = sorted(
+        data["days"],
+        key=lambda item: item["date"]
+    )
+
+    monthly = get_monthly_data(days)
+
+    total = data.get(
+        "total",
+        0
+    )
+
+    current_streak = data.get(
+        "current_streak",
+        0
+    )
+
+    longest_streak = data.get(
+        "longest_streak",
+        0
+    )
+
+    active_days = sum(
         1
         for day in days
         if day.get("count", 0) > 0
     )
 
-
-def get_best_day(days):
-    if not days:
-        return None
-
-    return max(
-        days,
-        key=lambda day: day.get("count", 0),
-    )
-
-
-def main():
-    data = load_data()
-
-    static = os.getenv("STATIC") == "1"
-
-    days = sorted(
-        data["days"],
-        key=lambda item: item["date"],
-    )
-
-    total = data.get("total", 0)
-
-    current_streak = data.get(
-        "current_streak",
-        0,
-    )
-
-    longest_streak = data.get(
-        "longest_streak",
-        0,
-    )
-
-    active_days = get_active_days(days)
-
-    best_day = get_best_day(days)
-
-    best_day_count = (
-        best_day.get("count", 0)
-        if best_day
-        else 0
-    )
-
-    monthly = get_monthly_data(days)
-
-    active_months = sum(
-        1
-        for _, value in monthly
-        if value > 0
-    )
+    # ---------------------------------------------------------
+    # SVG ROOT
+    # ---------------------------------------------------------
 
     svg = [
+
         '<?xml version="1.0" encoding="UTF-8"?>',
 
         (
@@ -172,102 +170,87 @@ def main():
             f'y2="42" '
             f'stroke="{BORDER}"/>'
         ),
+
+        # Identity.
+        (
+            f'<text '
+            f'x="22" '
+            f'y="64" '
+            f'font-family="monospace" '
+            f'font-size="8" '
+            f'letter-spacing="1.6" '
+            f'fill="{GREEN}">'
+            f'SENIOR SOFTWARE ENGINEER'
+            f'</text>'
+        ),
+
+        (
+            f'<text '
+            f'x="22" '
+            f'y="83" '
+            f'font-family="monospace" '
+            f'font-size="10" '
+            f'fill="{TEXT}">'
+            f'Building scalable web &amp; mobile systems'
+            f'</text>'
+        ),
     ]
 
     # ---------------------------------------------------------
-    # HEADER
-    # ---------------------------------------------------------
-
-    svg.append(
-        (
-            f'<text '
-            f'x="22" '
-            f'y="70" '
-            f'font-family="monospace" '
-            f'font-size="10" '
-            f'letter-spacing="1.5" '
-            f'fill="{GREEN}">'
-            f'GITHUB ANALYTICS'
-            f'</text>'
-        )
-    )
-
-    svg.append(
-        (
-            f'<text '
-            f'x="22" '
-            f'y="98" '
-            f'font-family="monospace" '
-            f'font-size="30" '
-            f'font-weight="bold" '
-            f'fill="{TEXT}">'
-            f'{total:,}'
-            f'</text>'
-        )
-    )
-
-    svg.append(
-        (
-            f'<text '
-            f'x="112" '
-            f'y="98" '
-            f'font-family="monospace" '
-            f'font-size="10" '
-            f'fill="{MUTED}">'
-            f'total contributions'
-            f'</text>'
-        )
-    )
-
-    # ---------------------------------------------------------
-    # SIX STAT CARDS
+    # SIX PROFESSIONAL STAT CARDS
     # ---------------------------------------------------------
 
     stats = [
+
         (
-            "CURRENT STREAK",
-            str(current_streak),
-            "consecutive days",
+            "ROLE",
+            "Senior Developer",
+            "software engineering",
         ),
+
         (
-            "LONGEST STREAK",
-            str(longest_streak),
-            "best run",
+            "COMPANY",
+            "Spadatsoft",
+            "professional role",
         ),
+
         (
-            "ACTIVE DAYS",
-            str(active_days),
-            "days with activity",
+            "PRIMARY",
+            "TypeScript",
+            "JavaScript / ES6",
         ),
+
         (
-            "BEST DAY",
-            str(best_day_count),
-            "contributions",
+            "FRONTEND",
+            "Next.js",
+            "React / React Native",
         ),
+
         (
-            "ACTIVE MONTHS",
-            str(active_months),
-            "of last 12",
+            "BACKEND",
+            "NestJS",
+            "Node.js / Express",
         ),
+
         (
-            "YEAR TOTAL",
-            f"{total:,}",
-            "last 12 months",
+            "DATA / CLOUD",
+            "Supabase",
+            "Firebase / MongoDB",
         ),
     ]
 
     card_width = 214
-    card_height = 52
+    card_height = 47
 
     left_x = 22
     right_x = 254
 
-    start_y = 112
-    row_gap = 8
+    start_y = 94
+    row_gap = 6
 
     for index, (
         eyebrow,
-        value,
+        title,
         subtitle,
     ) in enumerate(stats):
 
@@ -282,18 +265,26 @@ def main():
 
         y = (
             start_y
-            + row * (
+            + row
+            * (
                 card_height
                 + row_gap
             )
         )
 
         if static:
+
             opacity = "1"
             animation = ""
+
         else:
+
             opacity = "0"
-            delay = 0.15 + index * 0.08
+
+            delay = (
+                0.1
+                + index * 0.08
+            )
 
             animation = (
                 f'<animate '
@@ -305,8 +296,10 @@ def main():
             )
 
         svg.append(
+
             (
                 f'<g opacity="{opacity}">'
+
                 f'<rect '
                 f'x="{x}" '
                 f'y="{y}" '
@@ -319,54 +312,56 @@ def main():
                 # Eyebrow.
                 f'<text '
                 f'x="{x + 12}" '
-                f'y="{y + 15}" '
+                f'y="{y + 13}" '
                 f'font-family="monospace" '
-                f'font-size="7" '
+                f'font-size="6.5" '
                 f'letter-spacing="1" '
                 f'fill="{GREEN}">'
                 f'{escape(eyebrow)}'
                 f'</text>'
 
-                # Big value.
+                # Main title.
                 f'<text '
                 f'x="{x + 12}" '
-                f'y="{y + 36}" '
+                f'y="{y + 31}" '
                 f'font-family="monospace" '
-                f'font-size="18" '
+                f'font-size="14" '
                 f'font-weight="bold" '
                 f'fill="{TEXT}">'
-                f'{escape(value)}'
+                f'{escape(title)}'
                 f'</text>'
 
                 # Subtitle.
                 f'<text '
-                f'x="{x + 85}" '
-                f'y="{y + 34}" '
+                f'x="{x + 12}" '
+                f'y="{y + 42}" '
                 f'font-family="monospace" '
-                f'font-size="7" '
+                f'font-size="6.5" '
                 f'fill="{MUTED}">'
                 f'{escape(subtitle)}'
                 f'</text>'
 
                 f'{animation}'
+
                 f'</g>'
             )
         )
 
     # ---------------------------------------------------------
-    # PILLAR CHART
+    # CONTRIBUTION PILLAR CHART
     # ---------------------------------------------------------
 
-    chart_title_y = 294
+    chart_title_y = 257
 
     svg.append(
+
         (
             f'<text '
             f'x="22" '
             f'y="{chart_title_y}" '
             f'font-family="monospace" '
-            f'font-size="8" '
-            f'letter-spacing="1.2" '
+            f'font-size="7.5" '
+            f'letter-spacing="1.3" '
             f'fill="{GREEN}">'
             f'CONTRIBUTION ACTIVITY'
             f'</text>'
@@ -374,16 +369,20 @@ def main():
     )
 
     chart_x = 22
-    chart_y = 302
+    chart_y = 264
+
     chart_width = 446
-    chart_height = 45
+    chart_height = 42
 
     if monthly:
+
         max_value = max(
             value
             for _, value in monthly
         )
+
     else:
+
         max_value = 1
 
     if max_value <= 0:
@@ -423,11 +422,18 @@ def main():
         )
 
         if static:
+
             opacity = "1"
             animation = ""
+
         else:
+
             opacity = "0"
-            delay = 0.7 + index * 0.04
+
+            delay = (
+                0.65
+                + index * 0.04
+            )
 
             animation = (
                 f'<animate '
@@ -439,6 +445,7 @@ def main():
             )
 
         svg.append(
+
             (
                 f'<rect '
                 f'x="{x:.2f}" '
@@ -448,35 +455,103 @@ def main():
                 f'rx="2" '
                 f'fill="{GREEN}" '
                 f'opacity="{opacity}">'
+
                 f'{animation}'
+
                 f'</rect>'
             )
         )
 
-        label = month[5:7]
-
+        # Month.
         svg.append(
+
             (
                 f'<text '
                 f'x="{x + pillar_width / 2:.2f}" '
-                f'y="359" '
+                f'y="318" '
                 f'text-anchor="middle" '
                 f'font-family="monospace" '
                 f'font-size="6" '
                 f'fill="{MUTED}">'
-                f'{escape(label)}'
+                f'{escape(month[5:7])}'
                 f'</text>'
             )
         )
+
+    # ---------------------------------------------------------
+    # ACTIVITY SUMMARY
+    # ---------------------------------------------------------
+
+    svg.append(
+
+        (
+            f'<text '
+            f'x="22" '
+            f'y="337" '
+            f'font-family="monospace" '
+            f'font-size="7" '
+            f'fill="{MUTED}">'
+            f'{total:,} contributions'
+            f' · {active_days:,} active days'
+            f' · streak {current_streak}'
+            f'</text>'
+        )
+    )
+
+    # ---------------------------------------------------------
+    # CONTACT
+    # ---------------------------------------------------------
+
+    svg.append(
+
+        (
+            f'<line '
+            f'x1="22" '
+            f'y1="345" '
+            f'x2="468" '
+            f'y2="345" '
+            f'stroke="{BORDER}"/>'
+        )
+    )
+
+    svg.append(
+
+        (
+            f'<text '
+            f'x="22" '
+            f'y="360" '
+            f'font-family="monospace" '
+            f'font-size="6.5" '
+            f'fill="{TEXT}">'
+            f'✉ {escape(EMAIL)}'
+            f'</text>'
+        )
+    )
+
+    svg.append(
+
+        (
+            f'<text '
+            f'x="330" '
+            f'y="360" '
+            f'font-family="monospace" '
+            f'font-size="6.5" '
+            f'fill="{TEXT}">'
+            f'☎ {escape(PHONE)}'
+            f'</text>'
+        )
+    )
 
     svg.append("</svg>")
 
     OUTPUT.write_text(
         "\n".join(svg),
-        encoding="utf-8",
+        encoding="utf-8"
     )
 
-    print(f"Created: {OUTPUT}")
+    print(
+        f"Created: {OUTPUT}"
+    )
 
 
 if __name__ == "__main__":
