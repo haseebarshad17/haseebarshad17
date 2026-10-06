@@ -87,3 +87,16 @@ Git           GitHub        Jira          Postman
 Figma         Vercel        DNS           Cursor IDE
 Slack
 ```
+
+### ⚡ Fun Fact
+
+I can spend hours debugging a single bug — because solving it feels like winning a championship! 🏆
+
+---
+
+### 🔗 Connect with me
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&style=for-the-badge)](https://linkedin.com/in/haseebarshad17)  
+[![Portfolio Website](https://img.shields.io/badge/Portfolio-Website-blueviolet?style=for-the-badge)](https://haseebarshad17.vercel.app)
+
+---
