@@ -18,6 +18,7 @@
 </td>
 
 <td valign="top">
+<br />
 <img
   src="./info-card.svg"
   width="490"
