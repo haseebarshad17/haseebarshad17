@@ -1,8 +1,8 @@
 <div align="center">
 
-<h3>
+<!-- <h3>
 <code>haseebarshad17@github ~ $ ./contributions.sh</code>
-</h3>
+</h3> -->
 
 <img
   src="./contrib-heatmap.svg"
@@ -10,11 +10,11 @@
   alt="GitHub contribution heatmap"
 />
 
-<br><br>
+<!-- <br><br> -->
 
-<h3>
+<!-- <h3>
 <code>haseebarshad17@github ~ $ whoami</code>
-</h3>
+</h3> -->
 
 <table>
 <tr>
@@ -28,6 +28,7 @@
 </td>
 
 <td valign="top">
+<br />
 <img
   src="./info-card.svg"
   width="490"
