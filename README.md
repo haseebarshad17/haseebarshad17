@@ -1,13 +1,10 @@
 <div align="center">
 
-
 <img
   src="./contrib-heatmap.svg"
   width="860"
   alt="GitHub contribution heatmap"
 />
-
-<br><br>
 
 <table>
 <tr>
