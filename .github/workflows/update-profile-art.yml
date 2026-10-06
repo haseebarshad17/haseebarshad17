@@ -1,4 +1,4 @@
-name: Update profile art
+name: Update Profile Art
 
 on:
   schedule:
@@ -14,32 +14,58 @@ permissions:
   contents: write
 
 jobs:
-  heatmap:
+  update-profile:
     runs-on: ubuntu-latest
 
     steps:
+      # ─────────────────────────────────────────────
+      # Checkout repository
+      # ─────────────────────────────────────────────
       - name: Checkout
         uses: actions/checkout@v4
 
+      # ─────────────────────────────────────────────
+      # Python
+      # ─────────────────────────────────────────────
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # ─────────────────────────────────────────────
+      # Dependencies
+      # ─────────────────────────────────────────────
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install requests==2.32.3 beautifulsoup4==4.12.3
 
+      # ─────────────────────────────────────────────
+      # Fetch GitHub contribution data
+      # ─────────────────────────────────────────────
       - name: Fetch contributions
         run: |
           python scripts/fetch_contributions.py
 
+      # ─────────────────────────────────────────────
+      # Generate contribution heatmap
+      # ─────────────────────────────────────────────
       - name: Render heatmap
         run: |
           python scripts/render_heatmap_svg.py
 
+      # ─────────────────────────────────────────────
+      # Generate engineering telemetry card
+      # ─────────────────────────────────────────────
+      - name: Render info card
+        run: |
+          python scripts/make_info_card.py
+
+      # ─────────────────────────────────────────────
+      # Commit generated files
+      # ─────────────────────────────────────────────
       - name: Commit generated files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg"
+          file_pattern: "data/contributions.json contrib-heatmap.svg info-card.svg"
