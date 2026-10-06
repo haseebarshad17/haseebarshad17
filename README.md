@@ -1,8 +1,5 @@
 <div align="center">
 
-<h3>
-<code>haseebarshad17@github ~ $ ./contributions.sh</code>
-</h3>
 
 <img
   src="./contrib-heatmap.svg"
@@ -11,10 +8,6 @@
 />
 
 <br><br>
-
-<h3>
-<code>haseebarshad17@github ~ $ whoami</code>
-</h3>
 
 <table>
 <tr>
