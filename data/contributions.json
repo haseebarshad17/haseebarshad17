@@ -1,7 +1,7 @@
 {
   "username": "haseebarshad17",
-  "total": 3332,
-  "current_streak": 2,
+  "total": 3376,
+  "current_streak": 4,
   "longest_streak": 38,
   "best_day": {
     "date": "2026-01-13",
@@ -20,7 +20,7 @@
     "2026-07": 291,
     "2026-08": 361,
     "2026-09": 188,
-    "2026-10": 14
+    "2026-10": 58
   },
   "days": [
     {
@@ -1850,12 +1850,22 @@
     },
     {
       "date": "2026-10-05",
-      "count": 6,
+      "count": 7,
       "level": 1
     },
     {
       "date": "2026-10-06",
+      "count": 40,
+      "level": 3
+    },
+    {
+      "date": "2026-10-07",
       "count": 1,
+      "level": 1
+    },
+    {
+      "date": "2026-10-08",
+      "count": 3,
       "level": 1
     }
   ]
