@@ -68,4 +68,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg info-card.svg"
+          file_pattern: "data/contributions.json contrib-heatmap.svg contrib-heatmap-mobile.svg info-card.svg info-card-mobile.svg"

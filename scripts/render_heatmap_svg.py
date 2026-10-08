@@ -40,6 +40,57 @@ def escape(value):
     )
 
 
+def render_mobile(padded, username, total, current_streak, longest_streak):
+    """Show the same year in three bands instead of shrinking 53 weeks."""
+    width, height = 360, 540
+    svg = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" '
+        f'height="{height}" viewBox="0 0 {width} {height}">',
+        '<title>GitHub contributions over the last year</title>',
+        f'<rect width="{width}" height="{height}" rx="12" fill="{BG}"/>',
+        f'<text x="20" y="25" font-family="monospace" font-size="12" '
+        f'fill="{TEXT}">{escape(username)}@github</text>',
+    ]
+    for band in range(3):
+        start, stop = band * 18 * 7, (band + 1) * 18 * 7
+        band_days = padded[start:stop]
+        dated = [day for day in band_days if day is not None]
+        if not dated:
+            continue
+        top = 60 + band * 140
+        label = f'{dated[0]["date"]} / {dated[-1]["date"]}'
+        svg.append(f'<text x="20" y="{top - 10}" font-family="monospace" '
+                   f'font-size="11" fill="{MUTED}">{escape(label)}</text>')
+        for index, day in enumerate(band_days):
+            if day is None:
+                continue
+            column, row = divmod(index, 7)
+            level = max(0, min(5, int(day.get("level", 0))))
+            x, y = 20 + column * 17, top + row * 17
+            svg.append(f'<rect x="{x}" y="{y}" width="13" height="13" '
+                       f'rx="2" fill="{PALETTE[level]}">'
+                       f'<title>{escape(day["date"])}: '
+                       f'{int(day.get("count", 0))} contributions</title></rect>')
+    svg.extend([
+        f'<text x="20" y="478" font-family="monospace" font-size="12" '
+        f'fill="{TEXT}">{total:,} contributions in the last year</text>',
+        f'<text x="20" y="500" font-family="monospace" font-size="11" '
+        f'fill="{MUTED}">streak {current_streak} / longest {longest_streak}</text>',
+        f'<text x="20" y="524" font-family="monospace" font-size="10" '
+        f'fill="{MUTED}">Less</text>',
+    ])
+    for index, color in enumerate(PALETTE):
+        svg.append(f'<rect x="{55 + index * 17}" y="514" width="13" '
+                   f'height="13" rx="2" fill="{color}"/>')
+    svg.extend([
+        f'<text x="164" y="524" font-family="monospace" font-size="10" '
+        f'fill="{MUTED}">More</text>',
+        '</svg>',
+    ])
+    Path("contrib-heatmap-mobile.svg").write_text("\n".join(svg), encoding="utf-8")
+
+
 def main():
 
     if not INPUT.exists():
@@ -262,6 +313,8 @@ def main():
         "\n".join(svg),
         encoding="utf-8",
     )
+
+    render_mobile(padded, username, total, current_streak, longest_streak)
 
     print(
         f"Created: {OUTPUT}"

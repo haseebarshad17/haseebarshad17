@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="640" viewBox="0 0 360 640">
+<title>GitHub engineering telemetry</title>
+<rect width="360" height="640" rx="10" fill="#0d1117" stroke="#30363d"/>
+<text x="18" y="28" font-family="monospace" font-size="14px" font-weight="bold" fill="#c9d1d9">ENGINEERING TELEMETRY</text>
+<text x="18" y="47" font-family="monospace" font-size="11px" font-weight="normal" fill="#8b949e">github activity / 365 day window</text>
+<line x1="18" y1="60" x2="342" y2="60" stroke="#30363d" stroke-width="1"/>
+<text x="18" y="79" font-family="monospace" font-size="11px" font-weight="bold" fill="#39d353">ACTIVITY</text>
+<text x="18" y="100" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">CONTRIBUTIONS</text>
+<text x="18" y="121" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">3,332</text>
+<text x="180" y="100" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">ACTIVE DAYS</text>
+<text x="180" y="121" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">280/365</text>
+<text x="18" y="148" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">CURRENT STREAK</text>
+<text x="18" y="169" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">2d</text>
+<text x="180" y="148" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">LONGEST STREAK</text>
+<text x="180" y="169" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">38d</text>
+<text x="18" y="196" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">AVG / DAY</text>
+<text x="18" y="217" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">9.1</text>
+<text x="180" y="196" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">AVG ACTIVE DAY</text>
+<text x="180" y="217" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">11.9</text>
+<text x="18" y="244" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">BEST DAY</text>
+<text x="18" y="265" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">64</text>
+<text x="180" y="244" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">CONSISTENCY</text>
+<text x="180" y="265" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">77%</text>
+<text x="18" y="322" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">ACTIVITY INDEX</text>
+<text x="18" y="343" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">100/100</text>
+<text x="180" y="322" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">30D ACTIVITY</text>
+<text x="180" y="343" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">154</text>
+<text x="18" y="370" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">90D ACTIVITY</text>
+<text x="18" y="391" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">732</text>
+<text x="180" y="370" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">30D TREND</text>
+<text x="180" y="391" font-family="monospace" font-size="18px" font-weight="bold" fill="#c9d1d9">-54%</text>
+<line x1="18" y1="280" x2="342" y2="280" stroke="#30363d" stroke-width="1"/>
+<text x="18" y="301" font-family="monospace" font-size="11px" font-weight="bold" fill="#39d353">ENGINEERING SIGNALS</text>
+<line x1="18" y1="409" x2="342" y2="409" stroke="#30363d" stroke-width="1"/>
+<text x="18" y="431" font-family="monospace" font-size="11px" font-weight="bold" fill="#39d353">ACTIVITY DISTRIBUTION</text>
+<text x="18" y="456" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">MON</text>
+<rect x="56" y="450" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="450" width="183.7" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="456" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">552</text>
+<text x="18" y="478" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">TUE</text>
+<rect x="56" y="472" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="472" width="225.0" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="478" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">676</text>
+<text x="18" y="500" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">WED</text>
+<rect x="56" y="494" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="494" width="189.1" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="500" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">568</text>
+<text x="18" y="522" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">THU</text>
+<rect x="56" y="516" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="516" width="163.4" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="522" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">491</text>
+<text x="18" y="544" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">FRI</text>
+<rect x="56" y="538" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="538" width="163.4" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="544" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">491</text>
+<text x="18" y="566" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">SAT</text>
+<rect x="56" y="560" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="560" width="107.5" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="566" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">323</text>
+<text x="18" y="588" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">SUN</text>
+<rect x="56" y="582" width="225" height="5" rx="2.5" fill="#0e4429"/>
+<rect x="56" y="582" width="76.9" height="5" rx="2.5" fill="#39d353"/>
+<text x="291" y="588" font-family="monospace" font-size="10px" font-weight="normal" fill="#c9d1d9">231</text>
+<line x1="18" y1="610" x2="342" y2="610" stroke="#30363d" stroke-width="1"/>
+<text x="18" y="628" font-family="monospace" font-size="10px" font-weight="normal" fill="#8b949e">PUBLIC GITHUB TELEMETRY</text>
+</svg>

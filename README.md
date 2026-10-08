@@ -1,43 +1,19 @@
 <div align="center">
 
-<!-- <h3>
-<code>haseebarshad17@github ~ $ ./contributions.sh</code>
-</h3> -->
+<!-- GitHub supports picture media queries; use a taller heatmap on phones. -->
+<picture>
+  <source media="(max-width: 600px)" srcset="./contrib-heatmap-mobile.svg" />
+  <img src="./contrib-heatmap.svg" width="860" alt="GitHub contributions over the last year" />
+</picture>
 
-<img
-  src="./contrib-heatmap.svg"
-  width="860"
-  alt="GitHub contribution heatmap"
-/>
-
-<!-- <br><br> -->
-
-<!-- <h3>
-<code>haseebarshad17@github ~ $ whoami</code>
-</h3> -->
-
-<table>
-<tr>
-
-<td valign="top">
-<img
-  src="./avi-ascii.svg"
-  width="370"
-  alt="ASCII portrait"
-/>
-</td>
-
-<td valign="top">
-<br />
-<img
-  src="./info-card.svg"
-  width="490"
-  alt="GitHub analytics"
-/>
-</td>
-
-</tr>
-</table>
+<!-- Inline images wrap naturally when both cards no longer fit. -->
+<p>
+  <img src="./avi-ascii.svg" width="360" alt="ASCII portrait of Haseeb Arshad" />
+  <picture>
+    <source media="(max-width: 600px)" srcset="./info-card-mobile.svg" />
+    <img src="./info-card.svg" width="490" alt="GitHub analytics: contributions, streaks and weekday activity" />
+  </picture>
+</p>
 
 </div>
 

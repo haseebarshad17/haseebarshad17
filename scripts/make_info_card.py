@@ -76,6 +76,51 @@ def bar(svg, x, y, width, value, maximum):
     )
 
 
+def render_mobile(metrics, weekday_names, weekday_totals):
+    """Reflow all desktop metrics into two readable columns for phones."""
+    width, height = 360, 640
+    svg = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" '
+        f'height="{height}" viewBox="0 0 {width} {height}">',
+        '<title>GitHub engineering telemetry</title>',
+        f'<rect width="{width}" height="{height}" rx="10" '
+        f'fill="{BG}" stroke="{BORDER}"/>',
+        text(18, 28, "ENGINEERING TELEMETRY", 14, TEXT, "bold"),
+        text(18, 47, "github activity / 365 day window", 11, MUTED),
+        line(18, 60, 342, 60),
+        text(18, 79, "ACTIVITY", 11, GREEN, "bold"),
+    ]
+    for index, (label, value) in enumerate(metrics):
+        if index < 8:
+            row = index // 2
+            y = 100 + row * 48
+        else:
+            row = (index - 8) // 2
+            y = 322 + row * 48
+        x = 18 + (index % 2) * 162
+        svg.append(text(x, y, label.upper(), 10, MUTED))
+        svg.append(text(x, y + 21, value, 18, TEXT, "bold"))
+    svg.extend([
+        line(18, 280, 342, 280),
+        text(18, 301, "ENGINEERING SIGNALS", 11, GREEN, "bold"),
+        line(18, 409, 342, 409),
+        text(18, 431, "ACTIVITY DISTRIBUTION", 11, GREEN, "bold"),
+    ])
+    maximum = max(weekday_totals)
+    for index, value in enumerate(weekday_totals):
+        y = 450 + index * 22
+        svg.append(text(18, y + 6, weekday_names[index], 10, MUTED))
+        bar(svg, 56, y, 225, value, maximum)
+        svg.append(text(291, y + 6, f"{value:,}", 10))
+    svg.extend([
+        line(18, 610, 342, 610),
+        text(18, 628, "PUBLIC GITHUB TELEMETRY", 10, MUTED),
+        "</svg>",
+    ])
+    Path("info-card-mobile.svg").write_text("\n".join(svg), encoding="utf-8")
+
+
 def main():
     if not INPUT.exists():
         raise FileNotFoundError(
@@ -471,7 +516,26 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"Created: {OUTPUT}")
+    render_mobile(
+        [
+            ("Contributions", f"{total:,}"),
+            ("Active Days", f"{active_days}/{len(days)}"),
+            ("Current Streak", f"{current_streak}d"),
+            ("Longest Streak", f"{longest_streak}d"),
+            ("Avg / Day", f"{average_day:.1f}"),
+            ("Avg Active Day", f"{average_active_day:.1f}"),
+            ("Best Day", str(best_day.get("count", 0))),
+            ("Consistency", f"{consistency:.0f}%"),
+            ("Activity Index", f"{activity_index:.0f}/100"),
+            ("30D Activity", f"{recent_30:,}"),
+            ("90D Activity", f"{recent_90:,}"),
+            ("30D Trend", growth_label),
+        ],
+        weekday_names,
+        weekday_totals,
+    )
+
+    print(f"Created: {OUTPUT} and info-card-mobile.svg")
 
 
 if __name__ == "__main__":
