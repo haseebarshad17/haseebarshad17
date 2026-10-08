@@ -1,19 +1,16 @@
 <div align="center">
 
-<!-- GitHub supports picture media queries; use a taller heatmap on phones. -->
+<!-- Only phones load the taller heatmap; desktop keeps the original artwork. -->
 <picture>
   <source media="(max-width: 600px)" srcset="./contrib-heatmap-mobile.svg" />
   <img src="./contrib-heatmap.svg" width="860" alt="GitHub contributions over the last year" />
 </picture>
 
-<!-- Inline images wrap naturally when both cards no longer fit. -->
-<p>
-  <img src="./avi-ascii.svg" width="360" alt="ASCII portrait of Haseeb Arshad" />
-  <picture>
-    <source media="(max-width: 600px)" srcset="./info-card-mobile.svg" />
-    <img src="./info-card.svg" width="490" alt="GitHub analytics: contributions, streaks and weekday activity" />
-  </picture>
-</p>
+<!-- Fixed desktop composition; a separate stacked composition for phones. -->
+<picture>
+  <source media="(max-width: 600px)" srcset="./profile-cards-mobile.svg" />
+  <img src="./profile-cards.svg" width="860" alt="Haseeb Arshad: ASCII portrait and GitHub analytics" />
+</picture>
 
 </div>
 

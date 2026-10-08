@@ -61,6 +61,9 @@ jobs:
         run: |
           python scripts/make_info_card.py
 
+      - name: Render responsive profile layouts
+        run: python scripts/render_profile_layout.py
+
       # ─────────────────────────────────────────────
       # Commit generated files
       # ─────────────────────────────────────────────
@@ -68,4 +71,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: refresh contribution graph [skip ci]"
-          file_pattern: "data/contributions.json contrib-heatmap.svg contrib-heatmap-mobile.svg info-card.svg info-card-mobile.svg"
+          file_pattern: "data/contributions.json contrib-heatmap.svg contrib-heatmap-mobile.svg info-card.svg info-card-mobile.svg profile-cards.svg profile-cards-mobile.svg"
